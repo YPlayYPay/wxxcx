@@ -7,7 +7,7 @@
 const wechat = require('./utils/wechat.js')
 
 /**
- * Douban API 模块
+ * Ancademy API 模块
  * @type {Object}
  */
 const ancademy = require('./utils/ancademy.js')
@@ -28,7 +28,7 @@ App({
   wechat: wechat,
 
   /**
-   * Douban API
+   * ancademy API
    */
   ancademy: ancademy,
 
@@ -38,6 +38,14 @@ App({
    */
   onLaunch () {
     console.log(' ========== Application is launched ========== ')
+    ancademy.login().then(res => {
+      if (res.code) {
+        console.log('登录成功！' + res.code)
+      } else {
+        console.error('获取用户登录态失败！' + res.errMsg)
+      }
+    });
+
   },
   /**
    * 生命周期函数--监听小程序显示
