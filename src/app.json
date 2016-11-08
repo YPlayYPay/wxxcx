@@ -3,10 +3,10 @@
   // First is default to view
   // https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html#pages
   "pages": [
-    "pages/board/board",
-    "pages/list/list",
-    "pages/item/item",
-    "pages/profile/profile"
+    "pages/index/index",
+    "pages/course/course",
+    "pages/research/research",
+    "pages/profile/profile",
     // Dont remove this comment
   ],
   // Window configuration

@@ -7,14 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    boards: [
-      { key: 'in_theaters' },
-      { key: 'coming_soon' },
-      { key: 'top250' }
-      // { key: 'weekly' },
-      // { key: 'new_movies' },
-      // { key: 'us_box', name: '北美票房榜' }
-    ],
+    userInfo:{},
     loading: true
   },
 
@@ -22,15 +15,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad () {
-    const promises = this.data.boards.map(board => {
-      return app.douban.find(board.key, 1, 10)
-        .then(d => {
-          board.title = d.title
-          board.movies = d.subjects
-          return board
-        })
+    var that = this;
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function(userInfo){
+      //更新数据
+      that.setData({
+        userInfo:userInfo,
+        loading:false
+      })
     })
-    Promise.all(promises).then(boards => this.setData({ boards: boards, loading: false }))
+
   },
 
   /**

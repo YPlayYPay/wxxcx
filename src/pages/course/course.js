@@ -1,5 +1,5 @@
 // 获取全局应用程序实例对象
-const app = getApp()
+// const app = getApp()
 
 // 创建页面实例对象
 Page({
@@ -7,28 +7,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: '',
-    loading: true,
-    movie: {}
+    title: 'course'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (params) {
-    app.douban.findOne(params.id)
-      .then(d => this.setData({ title: d.title, movie: d, loading: false }))
-      .catch(e => {
-        this.setData({ title: '获取数据异常', movie: {}, loading: false })
-        console.error(e)
-      })
+  onLoad () {
+    // TODO: onLoad
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady () {
-    wx.setNavigationBarTitle({ title: this.data.title + ' « 电影 « 豆瓣' })
+    // TODO: onReady
   },
 
   /**
