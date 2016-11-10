@@ -1,5 +1,8 @@
 const URI = 'https://www.ancademy.org/apiv1/'
 
+var globalData = {
+  userInfo:null
+};
 /**
  * TODO
  * @param  {String} type   类型，例如：'course','research'
@@ -44,24 +47,41 @@ function findOne (id) {
 
 function login(){
   return new Promise((resolve, reject) => {
-    wx.login({
-      success: function(res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url:  `${URI}/${type}`,
-            header: { 'Content-Type': 'application/json' },
-            data: {
-              code: res.code
-            },
-            success: resolve,
-            fail: reject
+    if(this.globalData.userInfo){
+      resolve(this.globalData.userInfo);
+    }else{
+      //调用登录接口
+      wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              //TODO
+              var sessionKey = res.sessionKey;
+              var encryptedData = res.encryptedData;
+              var iv = res.iv;
+              var userInfo = res.userInfo;
+              wx.request({
+                url: 'https://www.ancademy.org/wechat/loginxcx',
+                data: {
+                  sessionkey: sessionKey,
+                  encrypteddata: encryptedData,
+                  iv: iv
+                },
+                success:(result)=>{
+                  console.log(result);//{orgCode orgName }
+                  userInfo.orgCode = result.orgCode;
+                  userInfo.orgName = result.orgName;
+                  resolve(userInfo);
+                },
+                fail:(err)=>{
+                  reject(err);
+                }
+              });
+            }
           })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
         }
-      }
-    });
+      })
+    }
   })
 }
-module.exports = { find, findOne }
+module.exports = { find, findOne, globalData }

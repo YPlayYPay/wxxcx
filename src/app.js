@@ -19,7 +19,8 @@ App({
    */
   data: {
     name: 'Ancademy+',
-    version: '0.1.0'
+    version: '0.1.0',
+    userInfo:{}
   },
 
   /**
@@ -31,21 +32,21 @@ App({
    * ancademy API
    */
   ancademy: ancademy,
-
+  
   /**
    * 生命周期函数--监听小程序初始化
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch () {
     console.log(' ========== Application is launched ========== ')
-    ancademy.login().then(res => {
-      if (res.code) {
-        console.log('登录成功！' + res.code)
-      } else {
-        console.error('获取用户登录态失败！' + res.errMsg)
-      }
+    var that =this;
+    this.ancademy.login().then((userinfo)=>{
+      that.setData({
+        userInfo:userinfo
+      })
+    }).catch((err)=>{
+      console.log(err);
     });
-
   },
   /**
    * 生命周期函数--监听小程序显示
