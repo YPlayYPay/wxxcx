@@ -1,49 +1,35 @@
 <scroll-view class="container" scroll-y="true">
-    <view class="slide">
-        <div class='an_top_left_part' style="float: 'left'">
-            <div class="an_left_info_user_head">
-                <img class="avatar" src="{{userInfo.avatarUrl}}"/>
+    <view bindtap="bindViewTap">
+        <div>
+            <img src="{{userInfo.avatarUrl}}"/>
+        </div>
+        <div>
+            <div>
+                <span>
+                    {{userInfo.nickName}}
+                </span>
+            </div>
+            <div>
+                <span>
+                    {{userInfo.orgName}}
+                </span>
             </div>
         </div>
-        <div class='an_top_right_part' style="float: 'left'">
-            <div class="an_left_info_user_info_list">
-                <div class="an_left_info_user_info_name" style="marginTop: 10">
-                    <span style="fontSize: 24,color: 'grey',paddingLeft: 30">
-                        {{userInfo.name}}
-                    </span>
-                </div>
-                <div class="an_left_info_user_info_ss">
-                    <div class="an_left_info_user_info_s">
-                        <span style="paddingLeft: 30,fontSize: 13,color: '#A5A5A5'">
-                            {{}}
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a style="position: 'absolute',top: 70,right: 20,fontSize: 20"> > </a>
+        <a> > </a>
     </view>
-    <view class="board" scroll-y="true">
-        <block wx:for="{{ boards }}" wx:key="{{ item.key }}">
-            <view class="board-item">
-                <navigator url="../list/list?type={{ item.key }}&title={{ item.title }}" hover-class="none">
-                    <view class="title">
-                        <text>{{ item.title }}</text>
-                        <image src="../../images/arrowright.png" mode="aspectFill"/>
-                    </view>
-                </navigator>
-                <scroll-view class="content" scroll-x="true">
-                    <view class="inner">
-                        <navigator wx:for="{{ item.movies }}" wx:key="{{ item.id }}"
-                                   url="../item/item?id={{ item.id }}">
-                            <view class="movie-item">
-                                <image src="{{ item.images.medium }}" mode="aspectFill"/>
-                                <text>{{ item.title }}</text>
-                            </view>
-                        </navigator>
-                    </view>
-                </scroll-view>
+    <view class="navbar">
+        <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+            <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+        </view>
+    </view>
+    <block wx:for="{{list}}">
+        <view>
+            <view data-row-id="{{item.row_id}}" bindtap="onItemClick">
+                <view>
+                    <text>{{item.name}}</text>
+                    <text>{{item.time}}</text>
+                </view>
             </view>
-        </block>
-    </view>
+        </view>
+    </block>
 </scroll-view>

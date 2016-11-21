@@ -20,7 +20,7 @@ App({
   data: {
     name: 'Ancademy+',
     version: '0.1.0',
-    userInfo:{}
+    userInfo: {}
   },
 
   /**
@@ -32,21 +32,23 @@ App({
    * ancademy API
    */
   ancademy: ancademy,
-  
+
+  getUserInfo (cb) {
+    cb(this.data.userInfo)
+  },
+
   /**
    * 生命周期函数--监听小程序初始化
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch () {
     console.log(' ========== Application is launched ========== ')
-    var that =this;
-    this.ancademy.login().then((userinfo)=>{
-      that.setData({
-        userInfo:userinfo
-      })
-    }).catch((err)=>{
-      console.log(err);
-    });
+    var that = this
+    this.ancademy.login().then((userinfo) => {
+      that.data.userInfo = userinfo
+    }).catch((err) => {
+      console.log(err)
+    })
   },
   /**
    * 生命周期函数--监听小程序显示

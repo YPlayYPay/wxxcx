@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
+    navbar: ['课程', '研究'],
+    currentNavbar: '0',
+    userInfo: {},
     loading: true
   },
 
@@ -15,16 +17,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad () {
-    var that = this;
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo,
-        loading:false
+    app.getUserInfo((userInfo) => {
+      this.setData({
+        userInfo: userInfo,
+        loading: false
       })
     })
-
   },
 
   /**
@@ -60,5 +58,22 @@ Page({
    */
   onPullDownRefresh () {
     // TODO: onPullDownRefresh
+  },
+
+  bindViewTap () {
+    wx.navigateTo({
+      url: '../profile/profile'
+    })
+  },
+  /**
+   * 切换 navbar
+   */
+  swichNav (e) {
+    this.setData({
+      currentNavbar: e.currentTarget.dataset.idx
+    })
+    if (e.currentTarget.dataset.idx === 1 && this.data.latest_list.length === 0) {
+      this.pullUpLoadLatest()
+    }
   }
 })

@@ -6,7 +6,7 @@
     "pages/index/index",
     "pages/course/course",
     "pages/research/research",
-    "pages/profile/profile",
+    "pages/profile/profile"
     // Dont remove this comment
   ],
   // Window configuration
