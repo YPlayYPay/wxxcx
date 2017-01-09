@@ -1,11 +1,9 @@
 .container {
   padding-top: 36rpx;
 }
-
 .pr {
   position: relative;
 }
-
 .share {
   font-size: 28rpx;
   cursor: pointer;
@@ -14,12 +12,11 @@
   right: 10rpx;
   top: 40rpx;
 }
-
 .test-course {
-  color: rgb(0, 188, 212);
-  font-size: 1.17em; margin: .83em 0
+  color: #00bcd4;
+  font-size: 1.17em;
+  margin: 0.83em 0;
 }
-
 .course-tab {
   width: 100%;
   height: 68rpx;
@@ -27,11 +24,10 @@
   margin: 0;
   line-height: 0;
   padding: 0;
-  .active {
-    background-color: rgb(232, 252, 255);
-  }
 }
-
+.course-tab .active {
+  background-color: #e8fcff;
+}
 .course-item {
   cursor: pointer;
   box-sizing: border-box;
@@ -39,111 +35,95 @@
   height: 100%;
   text-align: center;
   display: inline-block;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 2rpx solid rgb(224, 224, 224);
-  border-top: 2rpx solid rgb(224, 224, 224);
+  background-color: #ffffff;
+  border-bottom: 2rpx solid #e0e0e0;
+  border-top: 2rpx solid #e0e0e0;
   transition: all 150ms linear;
 }
-
 .course-item-span {
   transition: color 0.2s linear;
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
   font-size: 32rpx;
   display: inline-block;
   line-height: 2em;
   overflow: hidden;
 }
-
 .course-content {
   position: relative;
 }
-
 .course-wrap {
   position: relative;
 }
-
-.course-mr30{
+.course-mr30 {
   margin-top: 60rpx;
 }
-
 .course-joined {
   display: inline;
   font-size: 28rpx;
-  color: rgb(157, 157, 157);
+  color: #9d9d9d;
 }
-
 .course-joined-num {
   display: inline;
   cursor: pointer;
   border-radius: 10rpx;
   padding: 6rpx 40rpx;
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 154, 154);
+  color: #ffffff;
+  background-color: #ff9a9a;
 }
-
 .course-joined-see {
   display: inline;
   margin-left: 16rpx;
   font-size: 20rpx;
-  color: rgb(167, 167, 167);
+  color: #a7a7a7;
 }
-
 .course-teacher {
   font-size: 28rpx;
-  color: rgb(157, 157, 157);
+  color: #9d9d9d;
 }
-
 .course-teacher-nickname {
-  color: rgb(255, 154, 154);
+  color: #ff9a9a;
 }
-
 .course-details {
   word-wrap: break-word;
   font-size: 28rpx;
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
   margin: 1em 0;
 }
-
 .course-edit {
   font-size: 28rpx;
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
   cursor: pointer;
   margin-top: -60rpx;
   margin-right: 20rpx;
   float: right;
 }
-
 .course-dcontent-wrap {
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
 }
-
 .course-dcontent {
   margin: 28rpx 0;
 }
-
 .new-warn {
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
   position: absolute;
   top: 10rpx;
   right: 10rpx;
-  text {
-    border-bottom: 2rpx solid rgb(255, 154, 154);
-    color: rgb(0, 188, 212);
-    font-size: 0.8em;
-    line-height: 2em;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
-  }
 }
-
+.new-warn text {
+  border-bottom: 2rpx solid #ff9a9a;
+  color: #00bcd4;
+  font-size: 0.8em;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
 .no-warn {
   margin-bottom: 60rpx;
   margin-top: 80rpx;
   font-size: 50rpx;
   color: grey;
 }
-
 .new-input-warn {
   display: inline-block;
   box-sizing: border-box;
@@ -155,22 +135,19 @@
   border-radius: 2rpx;
   border: 4rpx solid #eee;
 }
-
 .warn-button {
   margin-top: 100rpx;
   margin-bottom: 60rpx;
 }
-
 .warn-time {
   font-size: 24rpx;
-  color: rgb(68, 122, 150);
+  color: #447a96;
 }
-
 .warn-text {
   padding: 10rpx;
   font-size: 32rpx;
   word-wrap: break-word;
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
   border: solid 2rpx #D8D8D8;
   border-left: solid 6rpx #2DC6F8;
   border-right: solid 4rpx #447A96;
@@ -182,44 +159,40 @@
   white-space: pre;
   margin: 1em 0 1em;
 }
-
 .comment-button-wrap {
   position: absolute;
   right: 10rpx;
   top: 32rpx;
-  text {
-    border-bottom: 2rpx solid rgb(255, 154, 154);
-    color: rgb(255, 154, 154);
-    font-size: 0.8em;
-    line-height: 2em;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
-  }
 }
-
+.comment-button-wrap text {
+  border-bottom: 2rpx solid #ff9a9a;
+  color: #ff9a9a;
+  font-size: 0.8em;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
 .comment-none {
   margin-bottom: 60rpx;
   margin-top: 120rpx;
   font-size: 50rpx;
   color: grey;
 }
-
 .new-comment {
   position: absolute;
   left: 10rpx;
   top: 32rpx;
-  text {
-    border-bottom: 2rpx solid rgb(255, 154, 154);
-    font-size: 0.8em;
-    color: rgb(0, 188, 212);
-    line-height: 2em;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
-  }
 }
-
+.new-comment text {
+  border-bottom: 2rpx solid #ff9a9a;
+  font-size: 0.8em;
+  color: #00bcd4;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
 .course-list {
   cursor: pointer;
   background-color: #f8f8f8;
@@ -234,19 +207,16 @@
   height: 76rpx;
   transition: all .15s linear;
 }
-
 .course-index {
   display: inline-block;
   font-size: 28rpx;
 }
-
 .is-course-start {
   display: inline-block;
   font-size: 26rpx;
   margin-left: 24rpx;
-  color: rgb(139, 139, 139);
+  color: #8b8b8b;
 }
-
 .course-let-start {
   text-align: center;
   cursor: pointer;
@@ -260,7 +230,6 @@
   width: 110rpx;
   background-color: #52b6ac;
 }
-
 .see-course {
   text-align: center;
   cursor: pointer;
@@ -274,39 +243,35 @@
   width: 76rpx;
   background-color: #00bcd4;
 }
-
 .add-one-course {
   cursor: pointer;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 30px;
   font-size: 25px;
-  color: rgb(0, 188, 212);
-  border: 1px solid rgb(203, 208, 207);
+  color: #00bcd4;
+  border: 1px solid #cbd0cf;
   padding: 5px 50px;
   background-color: #e0e0e0;
 }
-
 .course-complete {
   font-size: 28rpx;
-  color: rgb(255, 154, 154);
+  color: #ff9a9a;
   cursor: pointer;
   margin-top: -60rpx;
   margin-right: 20rpx;
   float: right;
 }
-
 .cc-new {
   font-size: 30rpx;
   color: grey;
   margin-top: 100rpx;
-  .cc-return {
-    font-size: 24rpx;
-    cursor: pointer;
-    color: #00bcd4;
-  }
 }
-
+.cc-new .cc-return {
+  font-size: 24rpx;
+  cursor: pointer;
+  color: #00bcd4;
+}
 .cc-textarea {
   display: inline-block;
   padding-bottom: 8rpx;
@@ -318,7 +283,6 @@
   border-color: #eee;
   border-width: 4rpx;
 }
-
 .cc-commit {
   text-align: center;
   cursor: pointer;
@@ -334,64 +298,52 @@
   padding: 10rpx;
   background-color: #00bcd4;
 }
-
 .height-26 {
   height: 52rpx;
 }
-
 .talk-title {
   font-size: 24rpx;
   color: #447a96;
   margin-top: 36rpx;
 }
-
 .reply-style {
   cursor: pointer;
   color: #00bcd4;
 }
-
 .reply-content {
-  color: rgb(75, 75, 75);
+  color: #4b4b4b;
   font-size: 26rpx;
 }
-
 .talk-margin {
   margin: 80rpx auto 40rpx;
 }
-
 .block1 {
   border-left: 6rpx solid #447a96;
   padding-left: 20rpx;
 }
-
 .member {
   padding-bottom: 40rpx;
   position: relative;
 }
-
 .button-position1 {
   position: absolute;
   top: 30rpx;
   left: 40rpx;
 }
-
 .button-position2 {
   position: absolute;
   top: 30rpx;
   right: 40rpx;
 }
-
-.member-h3{
+.member-h3 {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-
 .member-p {
   text-align: center;
 }
-
 .member-key {
   text-align: center;
   font-size: 32rpx;
@@ -399,9 +351,8 @@
   padding-left: 0;
   padding-right: 0;
 }
-
 .member-none {
   text-align: center;
   cursor: pointer;
-  color: rgb(0, 188, 212);
+  color: #00bcd4;
 }

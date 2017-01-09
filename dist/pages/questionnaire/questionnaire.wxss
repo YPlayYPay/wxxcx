@@ -1,0 +1,33 @@
+.bba {
+  border-bottom: 2rpx solid #aaa;
+}
+.global-tabs {
+  display: inline-block;
+}
+.global-tabs .global-item {
+  position: relative;
+  z-index: 1;
+  bottom: -2rpx;
+  background-color: #f9f9f9;
+  display: inline-block;
+  min-width: 120rpx;
+  text-align: center;
+  border-bottom: none;
+  border-top: 2rpx solid #aaa;
+  border-left: 2rpx solid #aaa;
+  border-right: 2rpx solid #aaa;
+  border-radius: 10rpx 10rpx 0 0;
+  color: black;
+  cursor: pointer;
+  padding: 12rpx 24rpx;
+}
+.global-tabs .global-item .cha {
+  width: 32rpx;
+  height: 32rpx;
+  padding-left: 20rpx;
+}
+.global-add {
+  padding: 6px 12px;
+  cursor: pointer;
+  display: inline-block;
+}

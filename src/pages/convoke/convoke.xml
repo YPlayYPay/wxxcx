@@ -1,0 +1,29 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<scroll-view  class="container row" scroll-y="true">
+  <form>
+    <view class="row mt20">
+      <view class="col s12">
+        <text class="text-blue">召集标题</text>
+        <input type="text" class="text-input name-input"/>
+      </view>
+      <view class="col s12">
+        <text class="text-blue">召集详情</text>
+        <view class="border1 mt20">
+          <textarea class="convoke-textarea"></textarea>
+        </view>
+      </view>
+      <view class="col s12">
+        <view class="p ml10 mt20 mb20">
+          <checkbox id="private" class="convoke-checkbox1"/>
+          <label for="private">设为私有(仅自己可见)</label>
+        </view>
+      </view>
+      <view class="col s12 flex-row-center">
+        <view class="button">
+          <text>创建</text>
+        </view>
+      </view>
+    </view>
+  </form>
+</scroll-view>
+

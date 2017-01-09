@@ -6,7 +6,10 @@
     "pages/index/index",
     "pages/course/course",
     "pages/research/research",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/memberlist/memberlist",
+    "pages/convoke/convoke",
+    "pages/questionnaire/questionnaire"
     // Dont remove this comment
   ],
   // Window configuration

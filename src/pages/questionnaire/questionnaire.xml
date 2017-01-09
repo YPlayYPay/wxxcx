@@ -1,0 +1,51 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<scroll-view  class="container row" scroll-y="true">
+  <form>
+    <view class="row mt20">
+      <view class="col s12">
+        <text class="text-blue">问卷标题</text>
+        <input type="text" class="text-input name-input"/>
+      </view>
+      <view class="col s12">
+        <text class="text-blue">截止日期</text>
+        <picker mode="date" value="{{date}}" start="2016/01/01" end="2018/12/31" bindchange="bindDateChange">
+          <view class="picker mt20">
+            <text>{{date}}</text>
+          </view>
+          <view class="hr"></view>
+        </picker>
+      </view>
+    </view>
+    <view class="row">
+      <view class="col s12">
+        <text class="text-blue">问卷详情</text>
+        <view class="editor">
+          <view class="editor-view1">
+            <view class="editor-btn1 editor-color-white">
+              编辑
+            </view>
+            <view class="editor-btn1 editor-btn-2">
+              预览
+            </view>
+            <navigator class="editor-btn2">插图</navigator>
+          </view>
+          <view class="editor-text-wrap">
+            <textarea class="editor-text"></textarea>
+          </view>
+        </view>
+        <view class="p ml10 mt20 mb20">
+          <checkbox id="private" class="convoke-checkbox1"/>
+          <label for="private">设为私有(仅自己可见)</label>
+        </view>
+      </view>
+    </view>
+    <view class="row bba">
+      <!--选项卡插件-->
+      <view class="global-tabs" wx:for="{{queTabList}}">
+        <view class="global-item">{{item.tabName}}<text class="cha">×</text></view>
+      </view>
+      <view class="global-add" bindtap="handleQueAdd">+</view>
+      <!--选项卡插件-->
+    </view>
+  </form>
+</scroll-view>

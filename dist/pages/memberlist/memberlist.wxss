@@ -1,0 +1,45 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mem-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.mem-hw {
+  width: 33.33%;
+  height: 112rpx;
+}
+.searchbox {
+  width: 95%;
+  box-sizing: border-box;
+}
+.searchbox input {
+  border: 2rpx solid #00bcd4;
+  display: inline-block;
+  width: 90%;
+  padding: 20rpx;
+  margin: 16rpx 0;
+  font-size: 32rpx;
+}
+.searchbox .mem-search-btn {
+  margin-left: -120rpx;
+  width: 80rpx;
+  display: inline-block;
+}
+.mem-invite {
+  width: 100%;
+  box-sizing: border-box;
+}
+.mem-invite text {
+  border-bottom: 2rpx solid #ff9a9a;
+  color: #00bcd4;
+  font-size: 1em;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}

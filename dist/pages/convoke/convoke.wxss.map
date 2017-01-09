@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/convoke/convoke.less"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,cAAA;EACA,SAAA;EACA,cAAA;EACA,cAAA","sourcesContent":[".convoke-textarea {\n  outline: none;\n  margin: 0;\n  resize: none;\n  width: 100%;\n  height: 300rpx;\n  border: 0;\n  color: #666464;\n  overflow: auto;\n}\n\n"],"file":"convoke.wxss"}

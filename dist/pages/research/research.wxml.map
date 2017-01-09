@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/research/research.xml"],"sourcesContent":["<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->\n<view class=\"container\">\n  <text class=\"title\">{{ title }}</text>\n</view>\n"],"file":"research.wxml"}
