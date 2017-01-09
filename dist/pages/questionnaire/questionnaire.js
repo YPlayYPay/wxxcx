@@ -5,14 +5,20 @@
 Page({
   /**
    * 页面的初始数据
+   * zeroQuestion没有分组，即0个分组
+   * flag0添加题目 1有自定义问题 2弹出选择问题遮罩层
    */
   data: {
-    idx: 1,
+    zeroQuestion: true,
+    idx: -1,
+    currentIdx: 0,
+    flag: 0,
     date: '2017/01/01',
     queTabList: [{
-      idx: 0,
-      tabName: '首页'
-    }]
+      tabName: '首页',
+      queList: []
+    }],
+    question: []
   },
 
   /**
@@ -72,13 +78,67 @@ Page({
   handleQueAdd(e) {
     let queTabList = this.data.queTabList;
     queTabList.push({
-      idx: this.data.idx + 1,
-      tabName: '第' + this.data.idx + '组'
+      tabName: '第' + (this.data.idx + 1) + '组',
+      queList: []
     });
     this.setData({
       queTabList: queTabList,
-      idx: this.data.idx + 1
+      idx: this.data.idx + 1,
+      currentIdx: this.data.idx + 1
     });
+  },
+
+  /**
+   * 问卷选项卡删除
+   */
+  bindQueDelete(e) {
+    let idx = e.currentTarget.dataset.idx;
+    let queTabList = this.data.queTabList;
+    queTabList.splice(idx, 1);
+    this.setData({
+      queTabList: queTabList,
+      currentIdx: idx - 1
+    });
+    if (queTabList.length === 0) {
+      this.setData({
+        idx: -1
+      });
+    }
+  },
+
+  /**
+   * 添加问题
+   */
+  addQuestion(e) {
+    this.setData({
+      flag: 2
+    });
+  },
+
+  /**
+   * 选项卡点击
+   */
+  setQueCurrent(e) {
+    let idx = e.currentTarget.dataset.idx;
+    this.setData({
+      currentIdx: idx
+    });
+  },
+
+  /**
+   * 遮罩层关闭
+   */
+  bindQueClose(e) {
+    var currentIdx = this.data.currentIdx;
+    if (this.data.queTabList[currentIdx].queList.length === 0) {
+      this.setData({
+        flag: 0
+      });
+    } else {
+      this.setData({
+        flag: 1
+      });
+    }
   }
 });
 //# sourceMappingURL=questionnaire.js.map

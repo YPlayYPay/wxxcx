@@ -64,6 +64,9 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+.back-white {
+  background-color: #fff;
+}
 .ml8 {
   margin-left: 16rpx;
 }

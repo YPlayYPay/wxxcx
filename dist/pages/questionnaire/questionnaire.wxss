@@ -13,10 +13,6 @@
   min-width: 120rpx;
   text-align: center;
   border-bottom: none;
-  border-top: 2rpx solid #aaa;
-  border-left: 2rpx solid #aaa;
-  border-right: 2rpx solid #aaa;
-  border-radius: 10rpx 10rpx 0 0;
   color: black;
   cursor: pointer;
   padding: 12rpx 24rpx;
@@ -26,8 +22,98 @@
   height: 32rpx;
   padding-left: 20rpx;
 }
+.global-tabs .active {
+  border-top: 2rpx solid #aaa;
+  border-left: 2rpx solid #aaa;
+  border-right: 2rpx solid #aaa;
+  border-radius: 10rpx 10rpx 0 0;
+}
 .global-add {
   padding: 6px 12px;
   cursor: pointer;
   display: inline-block;
+}
+.que-text {
+  border-bottom: 2rpx solid #ff9a9a;
+  color: #00bcd4;
+  font-size: 1em;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.que-box {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 1334rpx;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.que-box .que-box-iwrap {
+  max-height: 50%;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  vertical-align: middle;
+  white-space: normal;
+}
+.que-box .que-box-iwrap .que-box-i1 {
+  font-size: 32rpx;
+  cursor: pointer;
+  padding-right: 28rpx;
+  border-bottom: 2rpx solid #cccccc;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.que-box .que-box-iwrap .que-box-i2 {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 30rpx 60rpx;
+  position: relative;
+}
+.que-box .que-box-iwrap .que-box-i3 {
+  height: 465rpx;
+  border-bottom: 2rpx solid #ccc;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 0 60rpx;
+  position: relative;
+  text-align: left;
+}
+.que-box .que-box-iwrap .que-box-i3 .i3-wrap {
+  box-sizing: border-box;
+  border-top: 2rpx solid #9e9e9e;
+  border-bottom: 2rpx solid #9e9e9e;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.que-box .que-box-iwrap .que-box-i3 .i3-wrap .i3-item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20%;
+  text-align: center;
+  border-right: 2rpx solid #9e9e9e;
+}
+.que-box .que-box-iwrap .que-box-i3 .i3-wrap .i3-item-last {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20%;
+  text-align: center;
+}
+.que-box .que-box-iwrap .que-box-i3 .i3-wrap .i3-item-in {
+  display: inline-block;
+  height: 40rpx;
+  width: 100%;
+  color: #2db7f5;
 }

@@ -42,10 +42,59 @@
     <view class="row bba">
       <!--选项卡插件-->
       <view class="global-tabs" wx:for="{{queTabList}}">
-        <view class="global-item">{{item.tabName}}<text class="cha">×</text></view>
+        <view class="global-item {{currentIdx==index ? 'active':''}}" bindtap="setQueCurrent" data-idx="{{index}}">{{item.tabName}}<text class="cha" catchtap="bindQueDelete" data-idx="{{index}}">×</text></view>
       </view>
       <view class="global-add" bindtap="handleQueAdd">+</view>
       <!--选项卡插件-->
+    </view>
+    <view class="row tc">
+      <block wx:for="{{queTabList}}">
+        <block wx:if="{{currentIdx == index||currentIdx==-1}}">
+          <block wx:if="{{flag == 0}}">
+            <text class="que-text" bindtap="addQuestion">+添加题目</text>
+          </block>
+          <block wx:if="{{flag == 1}}">
+            <block wx:for="{{queTabList[index].queList}}">
+              <view class="danxuan">
+                <view class=""></view>
+              </view>
+              <view class="duoxuan"></view>
+              <view class="wenda"></view>
+              <view class="cheng"></view>
+              <view class="changjing"></view>
+            </block>
+          </block>
+          <block wx:if="{{flag == 2}}">
+            <!--问卷插件-->
+            <view class="que-box flex-row-center">
+              <view class="que-box-iwrap back-white">
+                <view class="que-box-i1" catchtap="bindQueClose">关闭</view>
+                <view class="que-box-i2">添加问题</view>
+                <view class="que-box-i3">
+                  <view class="i3-wrap">
+                    <view class="i3-item">
+                      <view class="i3-item-in">单选</view>
+                    </view>
+                    <view class="i3-item">
+                      <view class="i3-item-in">多选</view>
+                    </view>
+                    <view class="i3-item">
+                      <view class="i3-item-in">问答</view>
+                    </view>
+                    <view class="i3-item">
+                      <view class="i3-item-in">程度</view>
+                    </view>
+                    <view class="i3-item-last">
+                      <view class="i3-item-in">场景题</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <!--问卷插件-->
+          </block>
+        </block>
+      </block>
     </view>
   </form>
 </scroll-view>

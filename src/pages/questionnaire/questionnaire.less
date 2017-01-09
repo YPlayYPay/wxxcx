@@ -12,10 +12,6 @@
     min-width: 120rpx;
     text-align: center;
     border-bottom: none;
-    border-top: 2rpx solid #aaa;
-    border-left: 2rpx solid #aaa;
-    border-right: 2rpx solid #aaa;
-    border-radius: 10rpx 10rpx 0 0;
     color: black;
     cursor: pointer;
     padding: 12rpx 24rpx;
@@ -25,9 +21,101 @@
       padding-left: 20rpx;
     }
   }
+  .active {
+    border-top: 2rpx solid #aaa;
+    border-left: 2rpx solid #aaa;
+    border-right: 2rpx solid #aaa;
+    border-radius: 10rpx 10rpx 0 0;
+  }
 }
 .global-add {
   padding: 6px 12px;
   cursor: pointer;
   display: inline-block;
+}
+
+.que-text {
+  border-bottom: 2rpx solid rgb(255, 154, 154);
+  color: rgb(0, 188, 212);
+  font-size: 1em;
+  line-height: 2em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.que-box {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 1334rpx;
+  background-color: rgba(0,0,0,.6);
+  .que-box-iwrap {
+    max-height: 50%;
+    width: 100%;
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 6rpx 18rpx rgba(0,0,0,.6);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    vertical-align: middle;
+    white-space: normal;
+    .que-box-i1 {
+      font-size: 32rpx;
+      cursor: pointer;
+      padding-right: 28rpx;
+      border-bottom: 2rpx solid rgb(204, 204, 204);
+      height: 100rpx;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .que-box-i2 {
+      display: flex;
+      align-items: center;
+      color: inherit;
+      flex: 0 0 auto;
+      justify-content: space-between;
+      padding: 30rpx 60rpx;
+      position: relative;
+    }
+    .que-box-i3 {
+      height: 465rpx;
+      border-bottom: 2rpx solid #ccc;
+      flex: 1 1 auto;
+      overflow: auto;
+      padding: 0 60rpx;
+      position: relative;
+      text-align: left;
+      .i3-wrap {
+        box-sizing: border-box;
+        border-top: 2rpx solid rgb(158, 158, 158);
+        border-bottom: 2rpx solid rgb(158, 158, 158);
+        padding-top: 20rpx;
+        padding-bottom: 20rpx;
+        .i3-item {
+          display: inline-block;
+          box-sizing: border-box;
+          width: 20%;
+          text-align: center;
+          border-right: 2rpx solid rgb(158, 158, 158);
+        }
+        .i3-item-last {
+          display: inline-block;
+          box-sizing: border-box;
+          width: 20%;
+          text-align: center;
+        }
+        .i3-item-in {
+          display: inline-block;
+          height: 40rpx;
+          width: 100%;
+          color: rgb(45, 183, 245);
+        }
+      }
+    }
+  }
 }
