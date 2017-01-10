@@ -9,16 +9,16 @@ Page({
    * flag0添加题目 1有自定义问题 2弹出选择问题遮罩层
    */
   data: {
+    flagAdd: 0,
     zeroQuestion: true,
     idx: -1,
     currentIdx: 0,
     flag: 0,
     date: '2017/01/01',
     queTabList: [{
-      tabName: '首页',
-      queList: []
+      tabName: '首页'
     }],
-    question: []
+    queList: []
   },
 
   /**
@@ -78,13 +78,12 @@ Page({
   handleQueAdd(e) {
     let queTabList = this.data.queTabList;
     queTabList.push({
-      tabName: '第' + (this.data.idx + 1) + '组',
-      queList: []
+      tabName: '第' + (this.data.idx + 1) + '组'
     });
     this.setData({
       queTabList: queTabList,
       idx: this.data.idx + 1,
-      currentIdx: this.data.idx + 1
+      currentIdx: queTabList.length - 1
     });
   },
 
@@ -117,9 +116,10 @@ Page({
 
   /**
    * 选项卡点击
+   * flagAll标志组下没题目则为true
    */
   setQueCurrent(e) {
-    let idx = e.currentTarget.dataset.idx;
+    let idx = parseInt(e.currentTarget.dataset.idx);
     this.setData({
       currentIdx: idx
     });
@@ -129,8 +129,7 @@ Page({
    * 遮罩层关闭
    */
   bindQueClose(e) {
-    var currentIdx = this.data.currentIdx;
-    if (this.data.queTabList[currentIdx].queList.length === 0) {
+    if (this.data.queList.length === 0) {
       this.setData({
         flag: 0
       });
@@ -138,6 +137,91 @@ Page({
       this.setData({
         flag: 1
       });
+    }
+  },
+
+  /**
+   * 题目添加
+   */
+  chooseQue(e) {
+    var idx = parseInt(e.currentTarget.dataset.idx);
+    console.log(idx);
+    switch (idx) {
+      case 0:
+        this.data.queList.push({
+          currentIdx: this.data.currentIdx,
+          typeId: 0,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: 0
+        });
+        this.setData({
+          queList: this.data.queList,
+          flag: 1
+        });
+        break;
+      case 1:
+        this.data.queList.push({
+          currentIdx: this.data.currentIdx,
+          typeId: 1,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: 0
+        });
+        this.setData({
+          queList: this.data.queList,
+          flag: 1
+        });
+        break;
+      case 2:
+        this.data.queList.push({
+          currentIdx: this.data.currentIdx,
+          typeId: 2,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: 0
+        });
+        this.setData({
+          queList: this.data.queList,
+          flag: 1
+        });
+        break;
+      case 3:
+        this.data.queList.push({
+          currentIdx: this.data.currentIdx,
+          typeId: 3,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: 0
+        });
+        this.setData({
+          queList: this.data.queList,
+          flag: 1
+        });
+        break;
+      case 4:
+        this.data.queList.push({
+          currentIdx: this.data.currentIdx,
+          typeId: 4,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: 0
+        });
+        this.setData({
+          queList: this.data.queList,
+          flag: 1
+        });
+        break;
     }
   }
 });
