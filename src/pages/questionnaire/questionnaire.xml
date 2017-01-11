@@ -41,14 +41,14 @@
     </view>
     <view class="row bba">
       <!--选项卡插件-->
-      <view class="global-tabs" wx:for="{{queTabList}}">
-        <view class="global-item {{currentIdx==index ? 'active':''}}" bindtap="setQueCurrent" data-idx="{{index}}">{{item.tabName}}<text class="cha" catchtap="bindQueDelete" data-idx="{{index}}">×</text></view>
+      <view class="global-tabs" wx:for="{{groupInfo}}">
+        <view class="global-item {{curGroupId==index ? 'active':''}}" bindtap="setQueCurrent" data-idx="{{index}}">{{item.groupName}}<text class="cha" catchtap="bindQueDelete" data-idx="{{index}}">×</text></view>
       </view>
       <view class="global-add" bindtap="handleQueAdd">+</view>
       <!--选项卡插件-->
     </view>
     <view class="row tc">
-      <block wx:if="{{flag == 2}}">
+      <block wx:if="{{flag == 1}}">
         <!--问卷插件-->
         <view class="que-box flex-row-center">
           <view class="que-box-iwrap back-white">
@@ -77,32 +77,80 @@
         </view>
             <!--问卷插件-->
       </block>
-      <block wx:for="{{queList}}">
-        <block wx:if="{{item.currentIdx == currentIdx}}">
-          <block wx:if="{{item.typeId==0}}">
-            <view class="danxuan">
-              <view class="q-index">Q{{index}}</view>
-            </view>
+      <block wx:for="{{content}}">
+        <block wx:if="{{item.groupId == curGroupId}}">
+          <block wx:if="{{item.sceneId == -1}}">
+            <block wx:if="{{item.typeId == 0}}">
+              <view class="danxuan">
+                <view class="q-index">Q{{index+1}}.</view>
+                <view class="q-des">
+                  <input type="text" placeholder="单选题描述"/>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{item.typeId == 1}}">
+              <view class="duoxuan">
+                <view class="q-index">Q{{index+1}}.</view>
+              </view>
+            </block>
+            <block wx:if="{{item.typeId == 2}}">
+              <view class="wenda">
+                <view class="q-index">Q{{index+1}}.</view>
+              </view>
+            </block>
+            <block wx:if="{{item.typeId == 3}}">
+              <view class="cheng">
+                <view class="q-index">Q{{index+1}}.</view>
+              </view>
+            </block>
           </block>
-          <block wx:if="{{item.typeId==1}}">
-            <view class="duoxuan">
-              <view class="q-index">Q{{index}}</view>
-            </view>
-          </block>
-          <block wx:if="{{item.typeId==2}}">
-            <view class="wenda">
-              <view class="q-index">Q{{index}}</view>
-            </view>
-          </block>
-          <block wx:if="{{item.typeId==3}}">
-            <view class="cheng">
-              <view class="q-index">Q{{index}}</view>
-            </view>
-          </block>
-          <block wx:if="{{item.typeId==4}}">
+          <block wx:if="{{item.sceneId >= 0}}">
             <view class="changjing">
-              <view class="q-index">Q{{index}}</view>
+              {{sceneInfo[item.sceneId].sceneName}}
             </view>
+            <block wx:for="{{content}}" wx:for-index="index2" wx:for-item="item2">
+              <block wx:if="{{item2.sceneId==item.sceneId}}">
+                <block wx:if="{{item2.typeId==0}}">
+                  <view class="danxuan">
+                    <view class="q-index">Q{{index2+1}}.</view>
+                    <view class="q-des">
+                      <input type="text" placeholder="单选题描述"/>
+                    </view>
+                  </view>
+                </block>
+                <block wx:if="{{item2.typeId==1}}">
+                  <view class="duoxuan">
+                    <view class="q-index">Q{{index2+1}}.</view>
+                  </view>
+                </block>
+                <block wx:if="{{item2.typeId==2}}">
+                  <view class="wenda">
+                    <view class="q-index">Q{{index2+1}}.</view>
+                  </view>
+                </block>
+
+                <block wx:if="{{flag == 2}}">
+                  <!--问卷插件2-->
+                  <view class="que-scene back-white">
+                    <view class="que-scene-i1" catchtap="bindSceneQueClose">关闭</view>
+                    <view class="que-scene-i2">添加子问题</view>
+                    <view class="que-scene-i3">
+                      <view class="button" catchtap="chooseSceneQue" data-idx="0" data-index="{{item2.sceneId}}">
+                        <text>单选</text>
+                      </view>
+                      <view class="button" catchtap="chooseSceneQue" data-idx="1" data-index="{{item2.sceneId}}">
+                        <text>多选</text>
+                      </view>
+                      <view class="button" catchtap="chooseSceneQue" data-idx="2" data-index="{{item2.sceneId}}">
+                        <text>问答</text>
+                      </view>
+                    </view>
+                  </view>
+                  <!--问卷插件2-->
+                </block>
+              </block>
+            </block>
+            <text class="que-text" catchtap="addSceneQue">添加子题目</text>
           </block>
         </block>
       </block>

@@ -12,13 +12,15 @@ Page({
     flagAdd: 0,
     zeroQuestion: true,
     idx: -1,
-    currentIdx: 0,
+    curGroupId: 0,
     flag: 0,
     date: '2017/01/01',
-    queTabList: [{
-      tabName: '首页'
+    groupInfo: [{
+      groupName: '首页',
+      groupDesc: ''
     }],
-    queList: []
+    sceneInfo: [],
+    content: []
   },
 
   /**
@@ -76,14 +78,14 @@ Page({
    * 问卷选项卡添加
    */
   handleQueAdd(e) {
-    let queTabList = this.data.queTabList;
-    queTabList.push({
-      tabName: '第' + (this.data.idx + 1) + '组'
+    let groupInfo = this.data.groupInfo;
+    groupInfo.push({
+      groupName: '第' + (this.data.idx + 1) + '组'
     });
     this.setData({
-      queTabList: queTabList,
+      groupInfo: groupInfo,
       idx: this.data.idx + 1,
-      currentIdx: queTabList.length - 1
+      curGroupId: this.data.groupInfo.length - 1
     });
   },
 
@@ -92,13 +94,13 @@ Page({
    */
   bindQueDelete(e) {
     let idx = e.currentTarget.dataset.idx;
-    let queTabList = this.data.queTabList;
-    queTabList.splice(idx, 1);
+    let groupInfo = this.data.groupInfo;
+    groupInfo.splice(idx, 1);
     this.setData({
-      queTabList: queTabList,
-      currentIdx: idx - 1
+      groupInfo: groupInfo,
+      curGroupId: idx - 1
     });
-    if (queTabList.length === 0) {
+    if (groupInfo.length === 0) {
       this.setData({
         idx: -1
       });
@@ -106,11 +108,11 @@ Page({
   },
 
   /**
-   * 添加问题
+   * 添加组问题
    */
   addQuestion(e) {
     this.setData({
-      flag: 2
+      flag: 1
     });
   },
 
@@ -121,105 +123,185 @@ Page({
   setQueCurrent(e) {
     let idx = parseInt(e.currentTarget.dataset.idx);
     this.setData({
-      currentIdx: idx
+      curGroupId: idx
     });
   },
 
   /**
-   * 遮罩层关闭
+   * 遮罩层关闭1
    */
   bindQueClose(e) {
-    if (this.data.queList.length === 0) {
-      this.setData({
-        flag: 0
-      });
-    } else {
-      this.setData({
-        flag: 1
-      });
-    }
+    this.setData({
+      flag: 0
+    });
   },
 
   /**
-   * 题目添加
+   * 遮罩层关闭2
+   */
+  bindSceneQueClose(e) {
+    this.setData({
+      flag: 0
+    });
+  },
+
+  /**
+   * 组题目添加
    */
   chooseQue(e) {
     var idx = parseInt(e.currentTarget.dataset.idx);
-    console.log(idx);
     switch (idx) {
       case 0:
-        this.data.queList.push({
-          currentIdx: this.data.currentIdx,
+        this.data.content.push({
+          groupId: this.data.curGroupId,
           typeId: 0,
           myChoice: false,
           important: true,
           item: ['12434', '21344123'],
           range: [1, 10],
-          sceneId: 0
+          sceneId: -1,
+          title: '12323'
         });
         this.setData({
-          queList: this.data.queList,
-          flag: 1
+          content: this.data.content,
+          flag: 0
         });
         break;
       case 1:
-        this.data.queList.push({
-          currentIdx: this.data.currentIdx,
+        this.data.content.push({
+          groupId: this.data.curGroupId,
           typeId: 1,
           myChoice: false,
           important: true,
           item: ['12434', '21344123'],
           range: [1, 10],
-          sceneId: 0
+          sceneId: -1,
+          title: '12323'
         });
         this.setData({
-          queList: this.data.queList,
-          flag: 1
+          content: this.data.content,
+          flag: 0
         });
         break;
       case 2:
-        this.data.queList.push({
-          currentIdx: this.data.currentIdx,
+        this.data.content.push({
+          groupId: this.data.curGroupId,
           typeId: 2,
           myChoice: false,
           important: true,
           item: ['12434', '21344123'],
           range: [1, 10],
-          sceneId: 0
+          sceneId: -1,
+          title: '12323'
         });
         this.setData({
-          queList: this.data.queList,
-          flag: 1
+          content: this.data.content,
+          flag: 0
         });
         break;
       case 3:
-        this.data.queList.push({
-          currentIdx: this.data.currentIdx,
+        this.data.content.push({
+          groupId: this.data.curGroupId,
           typeId: 3,
           myChoice: false,
           important: true,
           item: ['12434', '21344123'],
           range: [1, 10],
-          sceneId: 0
+          sceneId: -1,
+          title: '12323'
         });
         this.setData({
-          queList: this.data.queList,
-          flag: 1
+          content: this.data.content,
+          flag: 0
         });
         break;
       case 4:
-        this.data.queList.push({
-          currentIdx: this.data.currentIdx,
-          typeId: 4,
+        this.data.sceneInfo.push({
+          sceneName: '场景名',
+          sceneDesc: '场景描述'
+        });
+        console.log(this.data.sceneInfo);
+        this.data.content.push({
+          groupId: this.data.curGroupId,
+          typeId: 2,
           myChoice: false,
           important: true,
           item: ['12434', '21344123'],
           range: [1, 10],
-          sceneId: 0
+          sceneId: this.data.sceneInfo.length - 1,
+          title: '12313'
         });
         this.setData({
-          queList: this.data.queList,
-          flag: 1
+          content: this.data.content,
+          sceneInfo: this.data.sceneInfo,
+          flag: 0
+        });
+        break;
+    }
+  },
+
+  /**
+   * 添加子问题
+   */
+  addSceneQue(e) {
+    this.setData({
+      flag: 2
+    });
+  },
+
+  /**
+   * 添加场景子问题
+   */
+  chooseSceneQue(e) {
+    var idx = parseInt(e.currentTarget.dataset.idx);
+    var index = parseInt(e.currentTarget.dataset.index);
+    switch (idx) {
+      case 0:
+        this.data.content.push({
+          groupId: this.data.curGroupId,
+          typeId: 0,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: index,
+          title: '12323'
+        });
+        this.setData({
+          content: this.data.content,
+          flag: 0
+        });
+        break;
+      case 1:
+        this.data.content.push({
+          groupId: this.data.curGroupId,
+          typeId: 1,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: index,
+          title: '12323'
+        });
+        this.setData({
+          content: this.data.content,
+          flag: 0
+        });
+        break;
+      case 2:
+        this.data.content.push({
+          groupId: this.data.curGroupId,
+          typeId: 2,
+          myChoice: false,
+          important: true,
+          item: ['12434', '21344123'],
+          range: [1, 10],
+          sceneId: index,
+          title: '12323'
+        });
+        this.setData({
+          content: this.data.content,
+          flag: 0
         });
         break;
     }
