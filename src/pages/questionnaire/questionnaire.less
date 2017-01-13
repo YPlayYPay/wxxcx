@@ -53,9 +53,11 @@
   height: 1334rpx;
   background-color: rgba(0,0,0,.6);
   .que-box-iwrap {
+    position: relative;
+    z-index: 3;
     max-height: 50%;
     width: 100%;
-    background-color: #fff;
+    background-color: rgba(255,255,255,1);
     border: 0;
     box-shadow: 0 6rpx 18rpx rgba(0,0,0,.6);
     display: flex;
@@ -99,14 +101,14 @@
         .i3-item {
           display: inline-block;
           box-sizing: border-box;
-          width: 20%;
+          width: 25%;
           text-align: center;
           border-right: 2rpx solid rgb(158, 158, 158);
         }
         .i3-item-last {
           display: inline-block;
           box-sizing: border-box;
-          width: 20%;
+          width: 25%;
           text-align: center;
         }
         .i3-item-in {
@@ -120,17 +122,19 @@
   }
 }
 
-.danxuan {
+.danduoxuan {
   .q-index {
     font-size: 36rpx;
-    float: left;
+    display: inline-block;
     width: 80rpx;
+    box-sizing: border-box;
     margin-top: 10rpx;
   }
   .q-des {
     display: inline-block;
     width: 80%;
     input {
+      text-align: left;
       margin: 0;
       padding: 10rpx;
       outline: none;
@@ -140,9 +144,98 @@
       border-bottom: 2rpx solid #9e9e9e;
       display: inline-block;
       width: 100%;
-      padding: 20rpx;
-      margin: 16rpx 0;
+      box-sizing: border-box;
       transition: all ease .5s;
+    }
+  }
+  .radio {
+    margin: 1em 0;
+    .tab {
+      display: inline-block;
+      width: 80rpx;
+    }
+    .card {
+      display: inline-block;
+      width: 80%;
+      input {
+        position: relative;
+        z-index: 0;
+        text-align: left;
+        margin: 0;
+        padding: 10rpx;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2rpx solid #9e9e9e;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all ease .5s;
+      }
+    }
+  }
+  .iconlist {
+    margin: 10rpx;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    view {
+      padding-left: 80rpx;
+      padding-top: 20rpx;
+      color: #207ed0;
+      cursor: pointer;
+    }
+  }
+  .add-que-in {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 80rpx;
+    color: rgb(32, 126, 208);
+  }
+  .matrix {
+    width: 87%;
+    text-align: left;
+    margin-left: 60rpx;
+    border-bottom: 2rpx dotted rgb(189, 189, 189);
+  }
+  .q-lh {
+    line-height: 86rpx;
+    .q-lh-text1 {
+      display: inline-block;
+      width: 80rpx;
+    }
+    .q-lh-text2 {
+      display: inline-block;
+      input {
+        position: relative;
+        z-index: 0;
+        height: 50rpx;
+        width: 50rpx;
+        text-align: center;
+      }
+    }
+    .q-degree-des {
+      display: inline-block;
+      width: 70%;
+      margin-top: 0;
+      margin-left: 16rpx;
+      input {
+        position: relative;
+        z-index: 0;
+        padding-bottom: 8rpx;
+        outline: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2rpx solid #9e9e9e;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20rpx;
+        margin: 16rpx 0;
+        transition: all ease .5s;
+        text-align: left;
+      }
     }
   }
 }
@@ -152,12 +245,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 750 rpx;
-  height: 1334 rpx;
+  width: 750rpx;
+  height: 1334rpx;
   border: 0;
-  box-shadow: 0 3px 9px rgba(0,0,0,.6);
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 6rpx 18rpx rgba(0,0,0,.6);
   text-align: left;
   vertical-align: middle;
   white-space: normal;
@@ -167,30 +258,20 @@
     padding-right: 28rpx;
     border-bottom: 2rpx solid rgb(204, 204, 204);
     height: 100rpx;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
   }
   .que-scene-i2 {
-    display: flex;
-    align-items: center;
     color: inherit;
-    flex: 0 0 auto;
-    justify-content: space-between;
-    padding: 15px 30px;
+    padding: 30rpx 60rpx;
     position: relative;
   }
   .que-scene-i3 {
+    display: flex;
     border-bottom: 1px solid #ccc;
-    flex: 1 1 auto;
     overflow: auto;
-    padding: 0 30px;
+    padding: 0 60rpx;
     position: relative;
     background-color: #fff;
     border: 0;
-    box-shadow: 0 3px 9px rgba(0,0,0,.6);
-    display: flex;
-    flex-direction: column;
     text-align: left;
     vertical-align: middle;
     white-space: normal;

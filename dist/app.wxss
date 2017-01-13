@@ -192,6 +192,9 @@ textarea {
 .mt10 {
   margin-top: 20rpx;
 }
+.mr10 {
+  margin-right: 20rpx;
+}
 .h4 {
   margin: 1.33em 0;
   font-weight: bold;
@@ -258,4 +261,12 @@ textarea {
 .name-input {
   display: inline-block;
   padding-bottom: 4px;
+}
+input {
+  overflow: visible;
+}
+.flex-row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
