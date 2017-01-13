@@ -157,7 +157,7 @@ Page({
           typeId: 0,
           myChoice: false,
           important: true,
-          item: ['12434', '21344123'],
+          item: ['', ''],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -173,7 +173,7 @@ Page({
           typeId: 1,
           myChoice: false,
           important: true,
-          item: ['12434', '21344123'],
+          item: ['', ''],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -189,7 +189,7 @@ Page({
           typeId: 2,
           myChoice: false,
           important: true,
-          item: ['12434', '21344123'],
+          item: ['', ''],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -205,7 +205,7 @@ Page({
           typeId: 3,
           myChoice: false,
           important: true,
-          item: ['12434', '21344123'],
+          item: ['', ''],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -227,6 +227,19 @@ Page({
     this.setData({
       content: this.data.content
     });
+  },
+
+  /**
+   * 单选多选题目添加选项
+   */
+  addOption(e) {
+    let idx = parseInt(e.currentTarget.dataset.idx);
+    console.log(idx);
+    this.data.content[idx].item.push('');
+    this.setData({
+      content: this.data.content
+    });
   }
+
 });
 //# sourceMappingURL=questionnaire.js.map

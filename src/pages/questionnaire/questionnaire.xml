@@ -72,7 +72,7 @@
                   </view>
                 </block>
                 <view class="mt20 flex-row-start">
-                  <view class="add-que-in">添加选项</view>
+                  <view class="add-que-in" catchtap="addOption" data-idx="{{index}}">添加选项</view>
                   <view class="add-que-in">支持其它</view>
                 </view>
                 <view class="flex-row-center ml10 mr10">
@@ -101,7 +101,7 @@
                   </view>
                 </block>
                 <view class="mt20 flex-row-start">
-                  <view class="add-que-in">添加选项</view>
+                  <view class="add-que-in" catchtap="addOption" data-idx="{{index}}">添加选项</view>
                   <view class="add-que-in">支持其它</view>
                 </view>
                 <view class="flex-row-center ml10 mr10">
