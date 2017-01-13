@@ -71,9 +71,22 @@
                     </view>
                   </view>
                 </block>
+                <block wx:if="{{item.myChoice}}">
+                  <view class="radio">
+                    <view class="q-else">其它</view>
+                    <view class="card1">
+                      <input type="text" value="{{item1}}"/>
+                    </view>
+                  </view>
+                </block>
                 <view class="mt20 flex-row-start">
                   <view class="add-que-in" catchtap="addOption" data-idx="{{index}}">添加选项</view>
-                  <view class="add-que-in">支持其它</view>
+                  <block wx:if="{{item.myChoice}}">
+                    <view class="add-que-in" catchtap="cancelOther" data-idx="{{index}}">取消其它</view>
+                  </block>
+                  <block wx:if="{{item.myChoice == false}}">
+                    <view class="add-que-in" catchtap="supportOther" data-idx="{{index}}">支持其它</view>
+                  </block>
                 </view>
                 <view class="flex-row-center ml10 mr10">
                   <view class="hr mt10"></view>
@@ -100,9 +113,22 @@
                     </view>
                   </view>
                 </block>
+                <block wx:if="{{item.myChoice}}">
+                  <view class="radio">
+                    <view class="q-else">其它</view>
+                    <view class="card1">
+                      <input type="text" value="{{item1}}"/>
+                    </view>
+                  </view>
+                </block>
                 <view class="mt20 flex-row-start">
                   <view class="add-que-in" catchtap="addOption" data-idx="{{index}}">添加选项</view>
-                  <view class="add-que-in">支持其它</view>
+                  <block wx:if="{{item.myChoice}}">
+                    <view class="add-que-in" catchtap="cancelOther" data-idx="{{index}}">取消其它</view>
+                  </block>
+                  <block wx:if="{{item.myChoice == false}}">
+                    <view class="add-que-in" catchtap="supportOther" data-idx="{{index}}">支持其它</view>
+                  </block>
                 </view>
                 <view class="flex-row-center ml10 mr10">
                   <view class="hr mt10"></view>

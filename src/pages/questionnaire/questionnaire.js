@@ -236,11 +236,31 @@ Page({
    */
   addOption (e) {
     let idx = parseInt(e.currentTarget.dataset.idx)
-    console.log(idx)
     this.data.content[idx].item.push('')
     this.setData({
       content: this.data.content
     })
-  }
+  },
 
+  /**
+   * 支持其它
+   */
+  supportOther (e) {
+    let idx = parseInt(e.currentTarget.dataset.idx)
+    this.data.content[idx].myChoice = true
+    this.setData({
+      content: this.data.content
+    })
+  },
+
+  /**
+   * 支持其它
+   */
+  cancelOther (e) {
+    let idx = parseInt(e.currentTarget.dataset.idx)
+    this.data.content[idx].myChoice = false
+    this.setData({
+      content: this.data.content
+    })
+  }
 })

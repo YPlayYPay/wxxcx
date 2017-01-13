@@ -171,6 +171,31 @@
   box-sizing: border-box;
   transition: all ease .5s;
 }
+.danduoxuan .radio .card1 {
+  display: inline-block;
+  width: 80%;
+}
+.danduoxuan .radio .card1 input {
+  position: relative;
+  z-index: 0;
+  text-align: left;
+  margin: 0;
+  padding: 10rpx;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2rpx dotted #9e9e9e;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all ease .5s;
+}
+.danduoxuan .radio .q-else {
+  display: inline-block;
+  width: 80rpx;
+  text-align: left;
+}
 .danduoxuan .iconlist {
   margin: 10rpx;
   display: flex;
