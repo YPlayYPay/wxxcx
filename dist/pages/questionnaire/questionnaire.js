@@ -216,6 +216,17 @@ Page({
         });
         break;
     }
+  },
+
+  /**
+   * 组题目删除
+   */
+  queDelete(e) {
+    let idx = parseInt(e.currentTarget.dataset.idx);
+    this.data.content.splice(idx, 1);
+    this.setData({
+      content: this.data.content
+    });
   }
 });
 //# sourceMappingURL=questionnaire.js.map
