@@ -155,11 +155,21 @@ Page({
     switch (idx) {
       case 0:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 0,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -171,11 +181,21 @@ Page({
         break
       case 1:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 1,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -187,11 +207,21 @@ Page({
         break
       case 2:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 2,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -203,11 +233,21 @@ Page({
         break
       case 3:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 3,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -236,7 +276,10 @@ Page({
    */
   addOption (e) {
     let idx = parseInt(e.currentTarget.dataset.idx)
-    this.data.content[idx].item.push('')
+    this.data.content[idx].item.push({
+      itemIndex: String.fromCharCode(this.data.content[idx].item.length - 1),
+      itemContent: ''
+    })
     this.setData({
       content: this.data.content
     })
@@ -249,6 +292,7 @@ Page({
     let idx = parseInt(e.currentTarget.dataset.idx)
     this.data.content[idx].myChoice = true
     this.setData({
+      otherIndex: String.fromCharCode(this.data.content[idx].item.length),
       content: this.data.content
     })
   },

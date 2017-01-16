@@ -196,6 +196,15 @@ Page({
     wx.navigateTo({
       url: '../questionnaire/questionnaire'
     });
+  },
+
+  /**
+   * 新建问卷跳转
+   */
+  createExp(e) {
+    wx.navigateTo({
+      url: '../experiment/experiment'
+    });
   }
 });
 //# sourceMappingURL=index.js.map

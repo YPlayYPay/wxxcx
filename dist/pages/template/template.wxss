@@ -1,0 +1,64 @@
+.container {
+  background-color: #fbf9fe;
+  height: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  overflow-x: hidden;
+}
+.body {
+  min-height: 100%;
+  flex: 1;
+  background-color: #FBF9FE;
+  font-size: 16px;
+  font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  overflow: hidden;
+}
+.textarea {
+  height: 100%;
+  padding: 15px;
+  width: 90%;
+  background-color: #ccc;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.title {
+  text-align: center;
+  font-size: 40rpx;
+}
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.buttonExtra {
+  flex: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 78rpx;
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 0 28rpx;
+  text-align: center;
+  transition: all .15s linear;
+  border-radius: 2rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.117647), 0 2rpx 8rpx rgba(0, 0, 0, 0.117647);
+}
+.buttonExtra text {
+  color: #00bcd4;
+  font-size: 26rpx;
+  display: inline-block;
+  height: 2.7em;
+  line-height: 3em;
+  overflow: hidden;
+  cursor: pointer;
+}
+.groupIndex {
+  padding: 10px;
+}
+.card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
