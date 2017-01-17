@@ -187,21 +187,20 @@
   width: 100%;
   transition: all ease .5s;
 }
+.danduoxuan .card1 .q-x {
+  color: #7c7c7c;
+  cursor: pointer;
+}
+.danduoxuan .card1 .q-a {
+  display: inline-block;
+  width: 80rpx;
+}
 .danduoxuan .q-x-x {
   display: inline-block;
   width: 50rpx;
   height: 34rpx;
   text-align: left;
 }
-<<<<<<< HEAD
-.danduoxuan .radio .q-x {
-  color: #7c7c7c;
-  cursor: pointer;
-}
-.danduoxuan .radio .q-a {
-  display: inline-block;
-  width: 80rpx;
-=======
 .danduoxuan .q-x {
   color: #7c7c7c;
   cursor: pointer;
@@ -210,7 +209,6 @@
   display: inline-block;
   width: 80rpx;
   text-align: center;
->>>>>>> c2e421571223d7420096539d9eda0b10085e0cd6
 }
 .danduoxuan .iconlist {
   margin: 10rpx;

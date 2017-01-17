@@ -263,13 +263,6 @@ Page({
   addOption(e) {
     let idx = parseInt(e.currentTarget.dataset.idx);
     this.data.content[idx].item.push({
-<<<<<<< HEAD
-      itemIndex: String.fromCharCode(this.data.content[idx].item.length - 1),
-      itemContent: ''
-    });
-    this.setData({
-      content: this.data.content
-=======
       itemIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
       itemContent: ''
     });
@@ -294,7 +287,6 @@ Page({
     this.data.content[idx].item.splice(idxo, 1);
     this.data.content[idx].item.map((it, index) => {
       it.itemIndex = String.fromCharCode(index + 65);
->>>>>>> c2e421571223d7420096539d9eda0b10085e0cd6
     });
     if (this.data.content[idx].myChoice) {
       this.setData({
@@ -315,11 +307,7 @@ Page({
     let idx = parseInt(e.currentTarget.dataset.idx);
     this.data.content[idx].myChoice = true;
     this.setData({
-<<<<<<< HEAD
-      otherIndex: String.fromCharCode(this.data.content[idx].item.length),
-=======
       otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
->>>>>>> c2e421571223d7420096539d9eda0b10085e0cd6
       content: this.data.content
     });
   },
