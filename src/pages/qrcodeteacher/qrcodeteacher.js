@@ -7,18 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    inviteTeacherList: [
-      {
-        code: '0bba33',
-        state: '进行中，点击生成分享',
-        time: '2017-01-16 09:28:28'
-      },
-      {
-        code: '0bba34',
-        state: '进行中，点击生成分享',
-        time: '2017-01-16 09:28:28'
-      }
-    ]
+    qrcode: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQGm8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAySmFxWklHLTdiWC0xSWUyNmhvMTYAAgSOh31YAwSAOgkA'
   },
 
   /**
@@ -64,11 +53,13 @@ Page({
   },
 
   /**
-   * 进入生成二维码页面（在二维码页面分享二维码）
+   * 分享，点击右上角竖着三个点既可以分享该页图片（屏高80%）
    */
-  jumpInviteQR () {
-    wx.navigateTo({
-      url: '../qrcodeteacher/qrcodeteacher'
-    })
+  onShareAppMessage () {
+    return {
+      title: '成为研究者吧',
+      desc: '扫描二维码即可获得研究者身份',
+      path: '/pages/qrcodeteacher/qrcodeteacher'
+    }
   }
 })

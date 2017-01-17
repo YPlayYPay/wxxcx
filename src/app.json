@@ -13,7 +13,8 @@
     "pages/recharge/recharge",
     "pages/invoice/invoice",
     "pages/statements/statements",
-    "pages/investigator/investigator"
+    "pages/investigator/investigator",
+    "pages/qrcodeteacher/qrcodeteacher"
     // Dont remove this comment
   ],
   // Window configuration

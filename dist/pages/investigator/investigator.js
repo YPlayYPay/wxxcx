@@ -58,6 +58,15 @@ Page({
    */
   onPullDownRefresh() {
     // TODO: onPullDownRefresh
+  },
+
+  /**
+   * 进入生成二维码页面（在二维码页面分享二维码）
+   */
+  jumpInviteQR() {
+    wx.navigateTo({
+      url: '../qrcodeteacher/qrcodeteacher'
+    });
   }
 });
 //# sourceMappingURL=investigator.js.map

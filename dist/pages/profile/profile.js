@@ -14,17 +14,6 @@ Page({
     sexArray: ['男', '女']
   },
 
-  /**
-   * 分享test
-   */
-  onShareAppMessage() {
-    return {
-      title: '自定义分享标题',
-      desc: '自定义分享描述',
-      path: '/pages/profile/profile'
-    };
-  },
-
   getUserInfo() {
     const that = this;
     app.wechat.getUserInfo().then(res => that.setData({ userInfo: res.userInfo }));
