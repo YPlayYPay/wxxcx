@@ -5,19 +5,21 @@
   <view class="gat-info mb20">邀请说明: 点击下方邀请按钮可生成二维码邀请页面，将二维码页面分享给朋友，邀请他们微信扫码加入课研助手并成为研究者</view>
   <button class="gat-btn">邀请新研究者(2)</button>
   <view class="flex-row-start gat-width gat-text-color">进行中的邀请：1位</view>
-  <view class="gat-code flex-column-start">
-    <view class="gat-code-row">
-      <text class="gat-gray">邀请码：</text>
-      <text class="gat-yellow">0bba33</text>
+  <block wx:for="{{inviteTeacherList}}">
+    <view class="gat-code flex-column-start">
+      <view class="gat-code-row">
+        <text class="gat-gray">邀请码：</text>
+        <text class="gat-yellow">{{item.code}}</text>
+      </view>
+      <view class="gat-code-row">
+        <text class="gat-black">状态：</text>
+        <text class="gat-light-black">{{item.state}}</text>
+      </view>
+      <view class="gat-code-row">
+        <text class="gat-deep-white">生成时间 {{item.time}}</text>
+      </view>
     </view>
-    <view class="gat-code-row">
-      <text class="gat-black">状态：</text>
-      <text class="gat-light-black">进行中，点击生成分享</text>
-    </view>
-    <view class="gat-code-row">
-      <text class="gat-deep-white">生成时间 2017-01-16 09:28:28</text>
-    </view>
-  </view>
+  </block>
   <view class="flex-row-start gat-width mt30 gat-text-color">长期有效的邀请：0位</view>
   <view class="flex-row-start gat-width mt30 gat-text-color">已完成的邀请：0位</view>
 </view>

@@ -7,7 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: 'investigator'
+    inviteTeacherList: [{
+      code: '0bba33',
+      state: '进行中，点击生成分享',
+      time: '2017-01-16 09:28:28'
+    }, {
+      code: '0bba34',
+      state: '进行中，点击生成分享',
+      time: '2017-01-16 09:28:28'
+    }]
   },
 
   /**
