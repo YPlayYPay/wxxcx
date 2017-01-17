@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["pages/statements/statements.xml"],"sourcesContent":["<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->\n<block wx:if=\"{{statements.length==0}}\">\n  <view class=\"flex-row-center mt30\">\n    暂无流水记录：P\n  </view>\n</block>\n"],"file":"statements.wxml"}

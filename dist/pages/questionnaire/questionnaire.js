@@ -263,12 +263,49 @@ Page({
   addOption(e) {
     let idx = parseInt(e.currentTarget.dataset.idx);
     this.data.content[idx].item.push({
+<<<<<<< HEAD
       itemIndex: String.fromCharCode(this.data.content[idx].item.length - 1),
       itemContent: ''
     });
     this.setData({
       content: this.data.content
+=======
+      itemIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+      itemContent: ''
     });
+    if (this.data.content[idx].myChoice) {
+      this.setData({
+        otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+        content: this.data.content
+      });
+    } else {
+      this.setData({
+        content: this.data.content
+      });
+    }
+  },
+
+  /**
+   * 单选多选题目添加选项
+   */
+  deleteQItem(e) {
+    let idx = parseInt(e.currentTarget.dataset.idx);
+    let idxo = parseInt(e.currentTarget.dataset.idxo);
+    this.data.content[idx].item.splice(idxo, 1);
+    this.data.content[idx].item.map((it, index) => {
+      it.itemIndex = String.fromCharCode(index + 65);
+>>>>>>> c2e421571223d7420096539d9eda0b10085e0cd6
+    });
+    if (this.data.content[idx].myChoice) {
+      this.setData({
+        otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+        content: this.data.content
+      });
+    } else {
+      this.setData({
+        content: this.data.content
+      });
+    }
   },
 
   /**
@@ -278,13 +315,17 @@ Page({
     let idx = parseInt(e.currentTarget.dataset.idx);
     this.data.content[idx].myChoice = true;
     this.setData({
+<<<<<<< HEAD
       otherIndex: String.fromCharCode(this.data.content[idx].item.length),
+=======
+      otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+>>>>>>> c2e421571223d7420096539d9eda0b10085e0cd6
       content: this.data.content
     });
   },
 
   /**
-   * 支持其它
+   * 取消其它
    */
   cancelOther(e) {
     let idx = parseInt(e.currentTarget.dataset.idx);

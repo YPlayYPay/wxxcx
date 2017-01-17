@@ -1,0 +1,11 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="qrt-wrap">
+  <view class="qrt-top flex-row-center">
+    <image src="https://oai94kv5e.qnssl.com/ancademy.png" class="logo"></image>
+  </view>
+  <view class="h3 tc width100 text-white fontw4">您的朋友邀请您加入{课研助手}</view>
+  <view class="tc width100 p qrt-grey">长按扫码后点链接即可成为研究者</view>
+  <view class="qrt-qr flex-row-center">
+    <image src="{{qrcode}}" alt="二维码加载中。。"></image>
+  </view>
+</view>

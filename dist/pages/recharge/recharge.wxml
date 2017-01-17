@@ -1,0 +1,43 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="rec-wrap">
+  <view class="rec-account">账户充值</view>
+  <radio-group class="rec-center">
+    <label for="radio10" class="bor">
+      <view class="p rec-p">¥10</view>
+      <view class="rec-radio">
+        <radio id="radio10"></radio>
+      </view>
+    </label>
+    <label for="radio11" class="bor">
+      <view class="p rec-p">¥30</view>
+      <view class="rec-radio">
+        <radio id="radio11"></radio>
+      </view>
+    </label>
+    <label for="radio12" class="bor">
+      <view class="p rec-p">¥50</view>
+      <view class="rec-radio">
+        <radio id="radio12"></radio>
+      </view>
+    </label>
+    <label for="radio13" class="bor">
+      <view class="p rec-p">¥100</view>
+      <view class="rec-radio">
+        <radio id="radio13"></radio>
+      </view>
+    </label>
+    <label for="radio14" class="bor">
+      <view class="p rec-p">¥200</view>
+      <view class="rec-radio">
+        <radio id="radio14"></radio>
+      </view>
+    </label>
+    <label for="radio15">
+      <view class="p rec-p">¥500</view>
+      <view class="rec-radio">
+        <radio id="radio15"></radio>
+      </view>
+    </label>
+  </radio-group>
+  <button class="rec-btn mt30">充值</button>
+</view>

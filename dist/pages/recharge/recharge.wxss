@@ -1,0 +1,30 @@
+.rec-wrap {
+  margin-top: .77em;
+  margin-bottom: .3em;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #888;
+  font-size: 28rpx;
+}
+.rec-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-top: 2rpx solid #d9d9d9;
+  border-bottom: 2rpx solid #d9d9d9;
+}
+.rec-center label {
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rec-center label.bor {
+  border-bottom: 2rpx solid #d9d9d9;
+}
+.rec-btn {
+  background-color: #04be02;
+  color: #fff;
+}

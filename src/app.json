@@ -11,7 +11,12 @@
     "pages/convoke/convoke",
     "pages/questionnaire/questionnaire",
     "pages/experiment/experiment",
-    "pages/template/template"
+    "pages/template/template",
+    "pages/recharge/recharge",
+    "pages/invoice/invoice",
+    "pages/statements/statements",
+    "pages/investigator/investigator",
+    "pages/qrcodeteacher/qrcodeteacher"
     // Dont remove this comment
   ],
   // Window configuration

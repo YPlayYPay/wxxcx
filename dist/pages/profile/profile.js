@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
+    userInfo: {},
+    editFlag: false,
+    pullDownFlag: false,
+    sexIndex: 0,
+    sexArray: ['男', '女']
   },
 
   getUserInfo() {
@@ -61,6 +65,84 @@ Page({
    */
   onPullDownRefresh() {
     // TODO: onPullDownRefresh
+  },
+
+  /**
+   * 编辑
+   */
+  handleEdit(e) {
+    this.setData({
+      editFlag: true
+    });
+  },
+
+  /**
+   * 点击下拉后弹出下拉框
+   */
+  handleSelect(e) {
+    this.setData({
+      pullDownFlag: true
+    });
+  },
+
+  /**
+   * 编辑
+   */
+  handleSexSelect(e) {
+    let idx = e.currentTarget.dataset.idx;
+    this.setData({
+      sexIndex: idx,
+      pullDownFlag: false
+    });
+  },
+
+  /**
+   * 确定按钮
+   */
+  formSubmit(e) {
+    let nickName = e.detail.value.nickName;
+    let phoneNum = e.detail.value.phoneNum;
+    console.log(nickName);
+    console.log(phoneNum);
+    this.setData({
+      editFlag: false
+    });
+  },
+
+  /**
+   * 充值按钮
+   */
+  handleRecharge(e) {
+    wx.navigateTo({
+      url: '../recharge/recharge'
+    });
+  },
+
+  /**
+   * 发票按钮
+   */
+  handleInvoice(e) {
+    wx.navigateTo({
+      url: '../invoice/invoice'
+    });
+  },
+
+  /**
+   * 流水按钮
+   */
+  handleJournal(e) {
+    wx.navigateTo({
+      url: '../statements/statements'
+    });
+  },
+
+  /**
+   * 邀请研究者
+   */
+  handleInvite(e) {
+    wx.navigateTo({
+      url: '../investigator/investigator'
+    });
   }
 });
 //# sourceMappingURL=profile.js.map

@@ -1,0 +1,6 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<block wx:if="{{statements.length==0}}">
+  <view class="flex-row-center mt30">
+    暂无流水记录：P
+  </view>
+</block>
