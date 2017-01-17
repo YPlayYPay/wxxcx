@@ -167,7 +167,7 @@
 }
 .danduoxuan .q-else {
   display: inline-block;
-  width: 100rpx;
+  width: 90rpx;
   text-align: left;
 }
 .danduoxuan .card1 {
@@ -200,7 +200,7 @@
 .danduoxuan .q-a {
   display: inline-block;
   width: 80rpx;
-  text-align: left;
+  text-align: center;
 }
 .danduoxuan .iconlist {
   margin: 10rpx;
