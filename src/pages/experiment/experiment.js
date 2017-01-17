@@ -249,16 +249,16 @@ Page({
   share () {
     // 在这里发送ajax请求 if else 判断 gameIndex
     this.setData({
-        flagShare: true,
-        flag: false
+      flagShare: true,
+      flag: false
     })
   },
 
   fresh () {
     // 在这里发送ajax请求 if else 判断 gameIndex
     this.setData({
-        flagFresh: true,
-        flag: false
+      flagFresh: true,
+      flag: false
     })
   },
 
@@ -272,11 +272,11 @@ Page({
 
   shut () {
     this.setData({
-        flagInvite: false,
-        flagShare: false,
-        flagFresh: false,
-        flagInfo: false,
+      flagInvite: false,
+      flagShare: false,
+      flagFresh: false,
+      flagInfo: false
     })
-  },
+  }
 
 })

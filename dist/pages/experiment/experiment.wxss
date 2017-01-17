@@ -119,3 +119,7 @@
   font-size: 50rpx;
   margin-top: 10px;
 }
+.members {
+  height: 200px;
+  width: 100%;
+}
