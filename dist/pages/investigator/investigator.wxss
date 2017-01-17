@@ -22,23 +22,39 @@
   overflow: hidden;
   cursor: pointer;
 }
-.gat-wrap .gat-cwrap {
-  padding: 30rpx 48rpx 0;
-}
-.gat-wrap .gat-cwrap .gat-code {
+.gat-wrap .gat-code {
+  width: 90%;
   border-width: 2rpx 4rpx 2rpx 6rpx;
   border-style: solid;
   border-color: #d8d8d8 #ff6600 #d8d8d8 #ffc750;
   height: 160rpx;
   border-radius: 10rpx;
-  padding-top: 24rpx;
-  box-sizing: border-box;
+  padding: 24rpx 24rpx;
+  margin-top: 30rpx;
 }
-.gat-wrap .gat-cwrap .gat-code .gat-code-row1 .gat-grey {
+.gat-wrap .gat-code .gat-code-row {
+  margin: 10rpx 0 0;
+}
+.gat-wrap .gat-code .gat-code-row .gat-grey {
   color: #838383;
   font-size: 26rpx;
 }
-.gat-wrap .gat-cwrap .gat-code .gat-code-row1 .gat-yellow {
+.gat-wrap .gat-code .gat-code-row .gat-yellow {
   color: #ffc750;
   font-size: 26rpx;
+}
+.gat-wrap .gat-code .gat-code-row .gat-black {
+  color: #737373;
+  font-size: 26rpx;
+}
+.gat-wrap .gat-code .gat-code-row .gat-light-black {
+  color: #447a96;
+  font-size: 26rpx;
+}
+.gat-wrap .gat-code .gat-code-row .gat-deep-white {
+  color: #b0b0b0;
+  font-size: 26rpx;
+}
+.gat-wrap .gat-text-color {
+  color: #666666;
 }

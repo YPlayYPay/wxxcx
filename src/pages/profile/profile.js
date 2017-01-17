@@ -20,7 +20,7 @@ Page({
   /**
    * 分享test
    */
-  onShareAppMessage() {
+  onShareAppMessage () {
     return {
       title: '自定义分享标题',
       desc: '自定义分享描述',
