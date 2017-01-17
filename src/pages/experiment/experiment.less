@@ -1,8 +1,62 @@
-@import "../template/template.less";
+
+.container{
+  background-color:#fbf9fe;
+  -webkit-user-select:none;
+  user-select:none;
+  width:100%;
+  overflow-x:hidden;
+}
+
+.body{
+  min-height:100%;
+  flex:1;
+  background-color:#FBF9FE;
+  font-size:16px;
+  font-family:-apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+  overflow: auto;
+  padding-bottom: 150rpx;
+}
+
+.textarea{
+  height: auto;
+  padding: 15px;
+  width: 80%;
+  background-color: #ccc;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.title{
+  text-align: center;
+  font-size: 50rpx;
+  margin-top: 10px;
+}
+
+.toolbar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+
+.groupIndex{
+  padding: 10px;
+}
+
+.card{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 2px 0 rgba(0,0,0,0.12);
+}
+
 
 .section{
   margin-top: 10px;
   text-align: center;
+  margin-bottom: 40rpx;
 }
 
 .picker{
@@ -19,7 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 60rpx;
 }
 
 .flexRow{
@@ -39,4 +93,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cardNew{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 2px 2px 0 rgba(0,0,0,0.12);
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.newContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleIndex{
+  align-self: center;
+  .title;
+}
+
+.newText{
+  margin-top: 20rpx;
+}
+
+.circle{
+  font-size: 50rpx;
+}
+
+.banner{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-right: 40rpx;
+}
+
+.nContent{
+  display: flex;
+  flex-direction: column;
+}
+
+.nTitle{
+  align-self: center;
+  .title
+}
+
+
+.members{
+  height: 200px;
+  width: 100%;
 }

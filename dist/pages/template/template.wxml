@@ -1,36 +1,4 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <template name="msgItem">
-<view class="container">
-  <view class="body">
-    <view class="title">
-      <text>{{title}}</text>
-    </view>
-    <textarea class="textarea">
-      {{textarea}}
-    </textarea>
-    <view class="toolbar">
-      <view class="buttonExtra" bindtap="{{}}">
-        <text>查看成员</text>
-      </view>
-      <view class="buttonExtra" bindtap="{{}}">
-        <text>分享</text>
-      </view>
-      <view class="buttonExtra" bindtap="{{}}">
-        <text>刷新数据</text>
-      </view>
-      <view class="buttonExtra" bindtap="{{}}">
-        <text>通知全部</text>
-      </view>
-    </view>
-    <view>
-      <text class="groupIndex">第{{groupIndex}}组</text>
-      <view class="card">
-        <text>第{{circleIndex}}轮</text>
-        <text>姓名:{{name}}</text>
-        <text>支出:{{cost}}</text>
-        <text>结余:{{free}}</text>
-      </view>
-    </view>
-  </view>
-</view>
+
 </template>
