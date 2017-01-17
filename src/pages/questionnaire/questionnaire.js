@@ -155,11 +155,21 @@ Page({
     switch (idx) {
       case 0:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 0,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -171,11 +181,21 @@ Page({
         break
       case 1:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 1,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -187,11 +207,21 @@ Page({
         break
       case 2:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 2,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -203,11 +233,21 @@ Page({
         break
       case 3:
         this.data.content.push({
+          otherIndex: null,
           groupId: this.data.curGroupId,
           typeId: 3,
           myChoice: false,
           important: true,
-          item: ['', ''],
+          item: [
+            {
+              itemIndex: 'A',
+              itemContent: ''
+            },
+            {
+              itemIndex: 'B',
+              itemContent: ''
+            }
+          ],
           range: [1, 10],
           sceneId: -1,
           title: '12323'
@@ -236,10 +276,42 @@ Page({
    */
   addOption (e) {
     let idx = parseInt(e.currentTarget.dataset.idx)
-    this.data.content[idx].item.push('')
-    this.setData({
-      content: this.data.content
+    this.data.content[idx].item.push({
+      itemIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+      itemContent: ''
     })
+    if (this.data.content[idx].myChoice) {
+      this.setData({
+        otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+        content: this.data.content
+      })
+    } else {
+      this.setData({
+        content: this.data.content
+      })
+    }
+  },
+
+  /**
+   * 单选多选题目添加选项
+   */
+  deleteQItem (e) {
+    let idx = parseInt(e.currentTarget.dataset.idx)
+    let idxo = parseInt(e.currentTarget.dataset.idxo)
+    this.data.content[idx].item.splice(idxo, 1)
+    this.data.content[idx].item.map((it, index) => {
+      it.itemIndex = String.fromCharCode(index + 65)
+    })
+    if (this.data.content[idx].myChoice) {
+      this.setData({
+        otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
+        content: this.data.content
+      })
+    } else {
+      this.setData({
+        content: this.data.content
+      })
+    }
   },
 
   /**
@@ -249,12 +321,13 @@ Page({
     let idx = parseInt(e.currentTarget.dataset.idx)
     this.data.content[idx].myChoice = true
     this.setData({
+      otherIndex: String.fromCharCode(this.data.content[idx].item.length + 65),
       content: this.data.content
     })
   },
 
   /**
-   * 支持其它
+   * 取消其它
    */
   cancelOther (e) {
     let idx = parseInt(e.currentTarget.dataset.idx)

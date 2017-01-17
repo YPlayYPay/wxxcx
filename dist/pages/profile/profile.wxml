@@ -1,13 +1,83 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
-<view class="container">
-  <view class="header">
-    <text class="title">{{ title }}</text>
+<view>
+  <block wx:if="{{editFlag == false}}">
+    <view class="pro-header">
+      <view class="pro-flex">
+        <view class="pro-flex-head">姓名：</view>
+        <view class="pro-flex-tail">爪爪</view>
+      </view>
+      <view class="pro-flex">
+        <view class="pro-flex-head">手机：</view>
+        <view class="pro-flex-tail">15972061602</view>
+      </view>
+      <view class="pro-flex">
+        <view class="pro-flex-head">性别：</view>
+        <view class="pro-flex-tail">男</view>
+      </view>
+    </view>
+    <view class="button ml30 mt10" catchtap="handleEdit">
+      <text>编辑</text>
+    </view>
+  </block>
+  <block wx:if="{{editFlag}}">
+    <form bindsubmit="formSubmit">
+      <view class="pro-header">
+        <view class="text-blue tl ml10">姓名：</view>
+        <view class="pro-input">
+          <input type="text" name="nickName" value="爪爪"/>
+        </view>
+        <view class="text-blue tl ml10">手机：</view>
+        <view class="pro-input">
+          <input type="text" name="phoneNum" value="15972061602"/>
+        </view>
+        <view class="text-blue tl ml10">性别：</view>
+        <view class="pr pull-margin">
+          <view class="pull-down {{pullDownFlag?'':'active'}}" catchtap="handleSelect">
+            <text>{{sexArray[sexIndex]}}</text>
+            <view></view>
+          </view>
+          <block wx:if="{{pullDownFlag}}">
+            <view class="pull-down-list">
+              <view catchtap="handleSexSelect" data-idx="0">男</view>
+              <view catchtap="handleSexSelect" data-idx="1">女</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="ml30 mt10">
+        <button class="pro-btn" formType="submit">确定</button>
+      </view>
+    </form>
+  </block>
+  <view class="shadow"></view>
+  <view class="pro-center">
+    <view class="pro-cflex1">
+      <view class="pro-cflex-head">角色：</view>
+      <view class="pro-cflex-tail">研究者</view>
+    </view>
+    <view class="pro-cflex2">
+      <text class="underline mr10" catchtap="handleInvite">邀请新研究者</text>
+    </view>
   </view>
-  <view class="user" bindtap="getUserInfo">
-    <image class="user-avatar" src="{{ userInfo.avatarUrl }}" mode="aspectFit"/>
-    <text class="user-nickname">{{ userInfo.nickName }}</text>
-    <text hidden="{{ !userInfo.city }}">{{ userInfo.city }}, {{ userInfo.province }}</text>
-    <text hidden="{{ !userInfo.city }}"> Thanks~ </text>
+  <view class="shadow1 mb20"></view>
+  <view class="pro-bottom-top">
+    <view class="pro-value">研值:</view>
+    <view class="pro-money"><text>0.</text>00</view>
+    <view class="pro-text">更新于：2017-01-16 11：25：57</view>
+  </view>
+  <view class="pro-bottom mt20">
+    <view class="pro-recharge">
+      <view class="flex-row-center bor-r" catchtap="handleRecharge">充值</view>
+      <view class="flex-row-center bor-r" catchtap="handleInvoice">发票</view>
+      <view class="flex-row-center bor-r">刷新</view>
+      <view class="flex-row-center" catchtap="handleJournal">流水</view>
+    </view>
+  </view>
+  <view class="shadow2"></view>
+  <view class="flex-row-center pro-button-wrap mt30">
+    <view class="button">
+      <text>账号退出</text>
+    </view>
   </view>
 </view>
 

@@ -64,9 +64,10 @@ function login () {
               var encryptedData = res.encryptedData
               var iv = res.iv
               var userInfo = res.userInfo
+              console.log(userInfo)
               wx.request({
                 method: 'POST',
-                url: 'https://www.ancademy.org/wechat/loginxcx',
+                url: 'http://192.168.2.204:3001/apiv2/user/login/xcx',
                 data: {
                   code: code,
                   encrypteddata: encryptedData,

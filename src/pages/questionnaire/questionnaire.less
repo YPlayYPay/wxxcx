@@ -136,7 +136,7 @@
     input {
       text-align: left;
       margin: 0;
-      padding: 10rpx;
+      padding: 10rpx 10rpx 4rpx 10rpx;
       outline: none;
       border-top: none;
       border-left: none;
@@ -148,58 +148,66 @@
       transition: all ease .5s;
     }
   }
-  .radio {
-    margin: 1em 0;
-    .tab {
-      display: inline-block;
-      width: 80rpx;
-    }
-    .card {
-      display: inline-block;
-      width: 80%;
-      input {
-        position: relative;
-        z-index: 0;
-        text-align: left;
-        margin: 0;
-        padding: 10rpx;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 2rpx solid #9e9e9e;
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        transition: all ease .5s;
-      }
-    }
-    .card1 {
-      display: inline-block;
-      width: 80%;
-      input {
-        position: relative;
-        z-index: 0;
-        text-align: left;
-        margin: 0;
-        padding: 10rpx;
-        outline: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 2rpx dotted #9e9e9e;
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-        transition: all ease .5s;
-      }
-    }
-    .q-else {
-      display: inline-block;
-      width: 80rpx;
+
+  .tab {
+    display: inline-block;
+    width: 80rpx;
+  }
+  .card {
+    display: inline-block;
+    width: 80%;
+    input {
       text-align: left;
+      margin: 8rpx 0;
+      padding: 10rpx 10rpx 4rpx 10rpx;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2rpx solid #9e9e9e;
+      display: inline-block;
+      width: 100%;
+      transition: all ease .5s;
     }
   }
+  .q-else {
+    display: inline-block;
+    width: 100rpx;
+    text-align: left;
+  }
+  .card1 {
+    display: inline-block;
+    width: 77%;
+    input {
+      text-align: left;
+      margin: 8rpx 0;
+      padding: 10rpx 10rpx 4rpx 10rpx;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2rpx dotted #9e9e9e;
+      display: inline-block;
+      width: 100%;
+      transition: all ease .5s;
+    }
+  }
+  .q-x-x {
+    display: inline-block;
+    width: 50rpx;
+    height: 34rpx;
+    text-align: left;
+  }
+  .q-x {
+    color: rgb(124, 124, 124);
+    cursor: pointer;
+  }
+  .q-a {
+    display: inline-block;
+    width: 80rpx;
+    text-align: left;
+  }
+
   .iconlist {
     margin: 10rpx;
     display: flex;

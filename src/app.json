@@ -9,7 +9,11 @@
     "pages/profile/profile",
     "pages/memberlist/memberlist",
     "pages/convoke/convoke",
-    "pages/questionnaire/questionnaire"
+    "pages/questionnaire/questionnaire",
+    "pages/recharge/recharge",
+    "pages/invoice/invoice",
+    "pages/statements/statements",
+    "pages/investigator/investigator"
     // Dont remove this comment
   ],
   // Window configuration
