@@ -1,5 +1,90 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="container">
+  <block wx:if="{{flagYaoa}}">  <!-- 邀请-->
+    <view class="body">
+      <view class="searchBox" >
+        <view class="searchBox-input-view">
+          <input placeholder="输入名字或手机号" class="searchBox-input"/>
+          <text class="searchText" bindtap="inviteSearch">搜索</text>
+        </view>
+        <view class="searchBox-text" bindtap="inviteMyStu" wx:if="{{flagInviteMyStu}}">
+          <text>邀请参与我课程的学生</text>
+        </view>
+      </view>
+      <block wx:if="{{!flagInviteMyStu}}">
+        <view class="view-top">
+          <view bindtap="cancel" class="cancel">
+            <text class="bottom-line">取消</text>
+          </view>
+          <view class="invite-view-title">
+            <text class="py">
+              课程
+            </text>
+            <text class="py">
+              人数
+            </text>
+            <text class="py">
+              操作
+            </text>
+          </view>
+          <view wx:for="{{[1]}}" class="invite-view-title" wx:key="{{index}}">
+            <text class="py">
+              njnj
+            </text>
+            <text class="py">
+              cacacaacac
+            </text>
+            <text class="py" bindtap="inviteCourse">
+              邀请此课程成员
+            </text>
+          </view>
+          <view class="button-all">
+            <view class="button" bindtap="backLast">
+              <text>返回</text>
+            </view>
+            <view class="button">
+              <text>邀请{{0}}人</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{flagInviteSearch}}">
+        <view class="view-top">
+          <view class="invite-view-title">
+            <checkbox class="cpy"/>
+            <text class="py">
+              姓名
+            </text>
+            <text class="py">
+              角色
+            </text>
+          </view>
+          <view wx:for="{{[1]}}" class="invite-view-title" wx:key="{{index}}">
+            <checkbox class="cpy"/>
+            <text class="py">
+              cacacaacac
+            </text>
+            <text class="py">
+              asdasdasd
+            </text>
+          </view>
+          <view class="button-center">
+            <view class="button" bindtap="inviteSearch">
+              <text>加载更多</text>
+            </view>
+          </view>
+          <view class="button-all">
+            <view class="button" bindtap="backLast">
+              <text>返回</text>
+            </view>
+            <view class="button">
+              <text>邀请{{0}}人</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
   <block wx:if="{{flagInvite}}">
     <view class="body">
       <view class="banner" bindtap="shut">
@@ -14,7 +99,7 @@
         </view>
       </view>
     </view>
-  </block>   <!-- 页面邀请-->
+  </block>   <!-- 进入页面邀请-->
   <block wx:if="{{flagShare}}">
     <view class="body">
       <view class="title">
@@ -30,8 +115,8 @@
         二维码
       </view>
     </view>
-  </block>
-  <block wx:if="{{!flagInvite&&!flagShare}}">
+  </block>    <!-- 分享页面-->
+  <block wx:if="{{!flagInvite&&!flagShare&&!flagYaoa}}">
     <block wx:if="{{!flag}}" >
       <view class="body">
         <view class="title">

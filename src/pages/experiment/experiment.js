@@ -17,6 +17,9 @@ Page({
     flagShare: false,
     flagFresh: false,
     flagInfo: false,
+    flagInviteSearch: false,
+    flagInviteMyStu: true,
+    flagYaoa: false,
     inputValue0: '',
     inputValue1: '',
     inputValue2: '',
@@ -267,6 +270,46 @@ Page({
     this.setData({
       flagInfo: true,
       flag: false
+    })
+  },
+
+  invite () {
+    this.setData({
+      flagYaoa: true,
+      flagInvite: false
+    })
+  },
+
+  inviteSearch () {
+    this.setData({
+      flagInviteSearch: true,
+      flagInviteMyStu: true
+    })
+  },
+
+  inviteMyStu () {
+    this.setData({
+      flagInviteMyStu: false,
+      flagInviteSearch: false
+    })
+  },
+
+  inviteCourse () {
+    this.setData({
+      flagInviteSearch: false
+    })
+  },
+
+  cancel () {
+    this.setData({
+      flagInviteMyStu: true,
+
+    })
+  },
+
+  backLast () {
+    this.setData({
+      flagYaoa: false
     })
   },
 
